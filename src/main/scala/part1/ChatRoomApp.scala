@@ -94,3 +94,15 @@ object Gabbler {
       }
     }
 }
+/*
+An Actor is given by the combination of a Behavior and a context in which this behavior is executed. As per the Actor Model an Actor can perform the following actions when processing a message:
+
+send a finite number of messages to other Actors it knows
+create a finite number of Actors
+designate the behavior for the next message
+In Akka the first capability is accessed by using the ! or tell method on an ActorRef, the second is provided by ActorContext#spawn and the third is implicit in the signature of Behavior in that the next behavior is always returned from the message processing logic.
+
+An ActorContext in addition provides access to the Actor’s own identity (“self”), the ActorSystem it is part of, methods for querying the list of child Actors it created, access to Terminated and timed message scheduling.
+
+Not for user extension.
+ */
