@@ -7,6 +7,8 @@ import akka.actor.typed.scaladsl.{Behaviors, LoggerOps}
 import java.net.URI
 
 //refer adapted-response diagram in docs
+//message adapter used for protocol translation between actors
+
 object AdaptedResponse extends App {
   def apply(): Behavior[NotUsed] = Behaviors.setup { context =>
     def uriBehavior():Behavior[URI] = Behaviors.empty
