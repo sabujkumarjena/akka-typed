@@ -18,6 +18,17 @@ object AskPattern extends App {
   ActorSystem(AskPattern(), "ask-pattern")
 
 }
+/*
+Request-Response with ask from outside an Actor
+Sometimes you need to interact with actors from the outside of the actor system, this can be done with fire-and-forget
+as described above or through another version of ask that returns a Future[Response] that is either completed with a
+successful response or failed with a TimeoutException if there was no response within the specified timeout.
+
+To do this we use ask (or the symbolic ?) implicitly added to ActorRef by akka.actor.typed.scaladsl.
+AskPattern._ to send a message to an actor and get a Future[Response] back. ask takes implicit Timeout
+and ActorSystem parameters.
+ */
+
 
 object Hal {
   sealed trait Command
